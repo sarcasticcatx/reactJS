@@ -1,0 +1,10 @@
+.Footer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(188, 52, 230);
+    height: 80px;
+    color: plum;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }

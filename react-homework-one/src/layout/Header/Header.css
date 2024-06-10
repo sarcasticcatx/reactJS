@@ -1,0 +1,12 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(248, 6, 127);
+    color: plum;
+  }
+  
+  .Header h1 {
+    margin: 0;
+  }

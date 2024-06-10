@@ -1,0 +1,31 @@
+.ListCard {
+    border: 2px solid #24011c;
+    padding: 20px;
+    border-radius: 4px;
+    background: rgb(30, 219, 23);
+    width: 200px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .heading {
+    font-size: 18px;
+    
+  }
+
+  
+  .is-packed-or-not {
+    background-color: rgb(224, 34, 199);
+    border: 2px solid rgb(27, 0, 0);
+    
+  }
+
+  .Button {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(201, 132, 247);
+    font-size: 16px;
+    min-width: 100px;
+  }
