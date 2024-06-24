@@ -1,0 +1,29 @@
+8.fix css
+9. add the lenghts and everything
+10. add link to the packmate header in the pages to make it go back home
+11. fix the packed unpacked buttons to correspond so dolnite counts
+
+ 
+make this be the return button for home for the header PackMate
+
+
+          import React, { useState } from 'react';
+import './YourStylesheet.css'; // Make sure to import your stylesheet
+
+function ButtonComponent() {
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    };
+
+    let buttonClass = isClicked? 'packed' : 'not-packed';
+
+    return (
+        <button className={buttonClass} onClick={handleClick}>
+            Click Me
+        </button>
+    );
+}
+
+export default ButtonComponent;

@@ -1,0 +1,65 @@
+.boy-list  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: flex-start;
+    color: rgb(135, 143, 146);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:  20px;
+    
+}
+
+.boy-list * {
+    margin: 10 10px; /* Adjust the values as needed */
+
+}
+
+.boy-essentials {
+    color: darkblue;
+}
+ol {
+    color: rgb(231, 139, 224);
+    font-size: 15px;
+    font-family: cursive;
+}
+.header h1{
+    display: flex;
+    justify-content: center;
+    margin: 3px;
+    background-color: rgb(201, 161, 238);
+    color: rgb(76, 30, 119);
+} 
+
+.footer{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-top: 15%;
+    border: 2px solid rgb(152, 99, 201);
+    gap: 10px
+} 
+.plus-button {
+    margin: 10px;
+    color: rgb(2, 2, 83);
+    border-radius: 50%;
+    background-color: rgb(97, 197, 164);
+}
+.minus-button {
+    margin: 10px;
+    color: blue;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+
+.packed  {
+    background-color: lightblue;
+    margin: 10px;
+}
+.packed::after {
+    background-color: rgb(36, 37, 37);
+}
+.not-packed {
+background-color: lightgreen;
+}
