@@ -23,7 +23,7 @@ export function GenderButtons({
     <div className="Buttons">
       <button className="Male-Button" style={styleMale} onClick={onMaleBtnClick}>
         {maleText}
-      </button>
+      </button> OR
       <button className="Female-Button" style={styleFemale} onClick={onFemaleBtnClick}>
         {femaleText}
       </button>

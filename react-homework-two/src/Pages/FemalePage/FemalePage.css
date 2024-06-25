@@ -1,35 +1,71 @@
+* {
+    margin: 9px
+}
+
 .girl-list  {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around; 
-    align-items: flex-start;
-    color: rgb(180, 143, 174);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
-}
-
-.girl-list > * {
-    margin: 10 10px; /* Adjust the values as needed */
-}
-
-
-.header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 5px;
-    border: 2px solid rgb(122, 122, 201);
+    color: rgb(59, 79, 87);
+    margin: 10px;
+  
 }
 
-.footer{
-    text-align: center;
+
+.girl-essentials {
+    color: rgb(30, 100, 112);
+    font-size:  2rem; 
+     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     padding-top: 10px;
+}
+
+
+.girl {
+    color: rgb(87, 7, 80);
+    font-size: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: inline;
+}
+.header h1{
     display: flex;
     justify-content: center;
+    margin: 3px;
+    padding: 5px;
+    border-bottom: 2px solid rgb(3, 87, 59);
+    color: rgb(8, 94, 22);
+} 
+
+.footer{
+ display: flex;  
+     text-align: center;
+    justify-content: center;
     align-items: center;
-    height: 80px;
-    margin-top: 15%;
-    border: 2px solid rgb(152, 99, 201);
-    gap: 10px
+    border-top: 2px solid rgb(2, 71, 54);
+    gap: 10px;
+    color: rgb(3, 80, 3);
+} 
+.plus-button {
+    margin: 10px;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    background-color: rgb(51, 145, 113);
+    
+}
+.minus-button {
+    margin: 10px;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    background-color: rgb(14, 158, 168);
 }
 
-
+.packed  {
+    background-color: rgb(113, 148, 160);
+    margin: 5px;
+    padding: 3px;
+}
+.packed::after {
+    background-color: rgb(36, 37, 37);
+}
+.not-packed {
+background-color: rgb(1, 104, 1);
+}

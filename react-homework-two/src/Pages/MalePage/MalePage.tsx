@@ -1,8 +1,9 @@
-import {useEffect, useState } from "react";
+import {useState } from "react";
 import { TravelListModel } from "../../model/travel-list.model";
 import "./MalePage.css";
+import { Link } from "react-router-dom";
 
-//go stavam ova tuka edinstveno zasto ne mi go povrzuva vo poseven folder koga e
+
 const boyList: TravelListModel[] = [
   {
     id: 1,
@@ -84,25 +85,7 @@ export function ItemsForGuys() {
       })
     );
   };
-  // const isPacked = (item: TravelListModel) => {
-  //   setBoyItems((prevBoyItems) => {
-  //     const updatedItems = prevBoyItems.map((it) =>
-  //       it.id === item.id? {...it, isPacked: true } : it
-  //     );
-  //     console.log("packed");
-  //     return updatedItems;
-  //   });
-  // };
-  
-  // const isNotPacked = (item: TravelListModel) => {
-  //   setBoyItems((prevBoyItems) => {
-  //     const updatedItems = prevBoyItems.map((it) =>
-  //       it.id === item.id? {...it, isPacked: false } : it
-  //     );
-  //     console.log("not packed");
-  //     return updatedItems;
-  //   });
-  // };
+
   const isPackedOrNot = (item: TravelListModel) => {
     setBoyItems((prevBoyItems) => {
       const updatedItems = prevBoyItems.map((it) =>
@@ -112,28 +95,24 @@ export function ItemsForGuys() {
       return updatedItems;
     });
   };
-  
-useEffect(() => {
-      const packedItems = boyList.filter((item) => item.isPacked).length;
-    const unpackedItems = boyList.filter((item) => !item.isPacked).length;
-}, [boyItems])
-
-
 
   return (
     <main>
-      <div className="header">
-        <h1> PackMate: Your Travel Companion 🧳 </h1>
+      <div className="header">  
+        <small style={{color: 'green'}}> @PackMate™</small>
+        <Link to="/" style={{ textDecoration: 'none' }} ><h1> PackMate: Your Travel Companion 🧳</h1></Link>
+      
       </div>
-      <div className="boy-list">
+      <div  className="boy-list">
         <h2 className="boy-essentials">
           {" "}
-          Essentials and Toiletries
+          Essentials & Toiletries
           <ol type="1">
             {boyItems.map((item) => (
               <li key={item.id}>
-                {item.title}: quantity:{" "}
-                <button
+                {item.title}:{" "}
+                <div > 
+                  <button 
                   className="plus-button"
                   onClick={() => plusButton(item)}
                 >
@@ -147,14 +126,11 @@ useEffect(() => {
                   -
                 </button>
                 <button className="packed" onClick={() => isPackedOrNot(item)}>
-                  {item.isPacked? "✅" : "❎"} 
+                  {item.isPacked? "packed✅" : "❎"} 
                 </button>
-                {/* <button
-                  className="not-packed"
-                  onClick={() => isNotPacked(item)}
-                >
-                  {item.isPacked} ❎
-                </button> */}
+
+                </div>
+               
               </li>
             ))}
           </ol>
@@ -162,12 +138,13 @@ useEffect(() => {
       </div>
       <div className="footer">
         <p>Total number of items: {boyItems.length}</p>
-        <p> Total quantity of all items:</p>
-        <p> Count of packed items:{packedItems}</p>
-        <p>Count of all unpacked items:{unpackedItems}</p>
-        <br />
-        <small> @PackMate™</small>
+        <p> Total quantity of all items: {boyItems.reduce((acc, item) => acc + item.quantity, 0)}</p>
+        <p> Count of packed items:{boyItems.filter((item) => item.isPacked).length}</p>
+        <p>Count of all unpacked items:{boyItems.filter((item) => !item.isPacked).length}</p>
+     
       </div>
     </main>
   );
 }
+
+
