@@ -29,3 +29,6 @@
     font-size: 16px;
     min-width: 100px;
   }
+button {
+  border: 1px solid pink;
+}

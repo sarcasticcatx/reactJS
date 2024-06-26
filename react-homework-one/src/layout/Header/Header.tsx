@@ -1,15 +1,15 @@
-import "./Header.css"
+import "./Header.css";
 
 interface HeaderProp {
-    title: string;
+  title: string;
 }
 
-function Header({title}: HeaderProp) {
-    return (
-        <header className="Header">
-            <h1>{title}</h1>
-        </header>
-    )
+function Header({ title }: HeaderProp) {
+  return (
+    <header className="Header">
+      <h1>{title}</h1>
+    </header>
+  );
 }
 
 export default Header;
