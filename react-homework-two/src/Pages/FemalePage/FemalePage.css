@@ -1,6 +1,9 @@
 * {
-    margin: 9px
+    margin: 9px;
+    box-sizing: border-box; 
+       max-width: 100%;
 }
+
 
 .girl-list  {
     display: flex;
@@ -28,21 +31,25 @@
 }
 .header h1{
     display: flex;
+    justify-content: space-between;
     justify-content: center;
-    margin: 3px;
-    padding: 5px;
+    background-color: rgb(250, 56, 153);
     border-bottom: 2px solid rgb(3, 87, 59);
-    color: rgb(8, 94, 22);
+    color: rgb(1, 83, 15);
+    font-size: 40px;
+    margin: 0px;
 } 
 
-.footer{
+.footer {
  display: flex;  
      text-align: center;
     justify-content: center;
     align-items: center;
+    background-color: rgb(188, 52, 230);
+    height: 80px;
     border-top: 2px solid rgb(2, 71, 54);
     gap: 10px;
-    color: rgb(3, 80, 3);
+    color: rgb(4, 68, 4);
 } 
 .plus-button {
     margin: 10px;

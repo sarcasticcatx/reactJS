@@ -1,8 +1,7 @@
-import {useState } from "react";
+import { useState } from "react";
 import { TravelListModel } from "../../model/travel-list.model";
 import "./FemalePage.css";
 import { Link } from "react-router-dom";
-
 
 const girlList: TravelListModel[] = [
   {
@@ -58,7 +57,6 @@ const girlList: TravelListModel[] = [
 export function ItemsForGirls() {
   const [girlItems, setGirlItems] = useState<TravelListModel[]>(girlList);
 
-
   //buttons
   const plusButton = (item: TravelListModel) => {
     setGirlItems(
@@ -89,7 +87,7 @@ export function ItemsForGirls() {
   const isPackedOrNot = (item: TravelListModel) => {
     setGirlItems((prevGirlItems) => {
       const updatedItems = prevGirlItems.map((it) =>
-        it.id === item.id? {...it, isPacked:!it.isPacked } : it
+        it.id === item.id ? { ...it, isPacked: !it.isPacked } : it
       );
       console.log(updatedItems);
       return updatedItems;
@@ -98,12 +96,13 @@ export function ItemsForGirls() {
 
   return (
     <main>
-      <div className="header">  
-        <small style={{color: 'green'}}> @PackMate™</small>
-        <Link to="/" style={{ textDecoration: 'none' }} ><h1> PackMate: Your Travel Companion 🧳</h1></Link>
-      
+      <div className="header">
+        <small style={{ color: "green" }}> @PackMate™</small>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <h1> PackMate: Your Travel Companion 🧳</h1>
+        </Link>
       </div>
-      <div  className="girl-list">
+      <div className="girl-list">
         <h2 className="girl-essentials">
           {" "}
           Essentials & Toiletries
@@ -111,40 +110,51 @@ export function ItemsForGirls() {
             {girlItems.map((item) => (
               <li key={item.id}>
                 {item.title}:{" "}
-                <div > 
-                  <button 
-                  className="plus-button"
-                  onClick={() => plusButton(item)}
-                >
-                  +
-                </button>{" "}
-                {item.quantity}
-                <button
-                  className="minus-button"
-                  onClick={() => minusButton(item)}
-                >
-                  -
-                </button>
-                <button className="packed" onClick={() => isPackedOrNot(item)}>
-                  {item.isPacked? "packed✅" : "❎"} 
-                </button>
-
+                <div>
+                  <button
+                    className="plus-button"
+                    onClick={() => plusButton(item)}
+                  >
+                    +
+                  </button>{" "}
+                  {item.quantity}
+                  <button
+                    className="minus-button"
+                    onClick={() => minusButton(item)}
+                  >
+                    -
+                  </button>
+                  <button
+                    className="packed"
+                    onClick={() => isPackedOrNot(item)}
+                  >
+                    {item.isPacked ? "packed✅" : "❎"}
+                  </button>
                 </div>
-               
               </li>
             ))}
           </ol>
         </h2>
       </div>
       <div className="footer">
-        <p>Total number of items: {girlItems.length}</p>
-        <p> Total quantity of all items: {girlItems.reduce((acc, item) => acc + item.quantity, 0)}</p>
-        <p> Count of packed items:{girlItems.filter((item) => item.isPacked).length}</p>
-        <p>Count of all unpacked items:{girlItems.filter((item) => !item.isPacked).length}</p>
-     
+        <p style={{ backgroundColor: "rgb(188, 52, 230)" }}>
+          Total number of items: {girlItems.length}
+        </p>
+        <p style={{ backgroundColor: "rgb(188, 52, 230)" }}>
+          {" "}
+          Total quantity of all items:{" "}
+          {girlItems.reduce((acc, item) => acc + item.quantity, 0)}
+        </p>
+        <p style={{ backgroundColor: "rgb(188, 52, 230)" }}>
+          {" "}
+          Count of packed items:
+          {girlItems.filter((item) => item.isPacked).length}
+        </p>
+        <p style={{ backgroundColor: "rgb(188, 52, 230)" }}>
+          Count of all unpacked items:
+          {girlItems.filter((item) => !item.isPacked).length}
+        </p>
       </div>
     </main>
   );
 }
-
-
