@@ -1,0 +1,52 @@
+.Buttons {
+  display: flex;
+  justify-content: center;
+ 
+
+}
+
+.Male-Button {
+    font-size: 20px;
+    padding: 10px;
+    width: 100px; 
+    height: 80px;
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer;
+    display: inline-block; 
+    position: relative;
+    border: 5px solid rgb(15, 100, 89);
+    padding: 10px;
+    margin-right: 7rem;
+    color: paleturquoise;
+    
+  
+}
+  .Male-Button:hover {
+    transition: 0.2s ease-in-out;
+  border-radius: 20%;
+    border: 2px solid rgb(15, 100, 89);
+    background-color: rgb(6, 88, 84);
+  }
+  .Female-Button {
+    font-size: 20px;
+    padding: 10px;
+    width: 100px; 
+    height: 80px;
+    background-color: transparent;
+    border: none; 
+    cursor: pointer;
+    display: inline-block; 
+    position: relative;
+    border: 5px solid rgb(197, 64, 87);
+    margin-left: 7rem;
+    color: pink;
+}
+
+.Female-Button:hover {
+  transition: 0.2s ease-in-out;
+  border-radius: 20%;
+  border: 2px solid rgb(197, 91, 91);
+  background-color: rgb(201, 70, 70);
+  
+}

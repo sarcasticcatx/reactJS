@@ -1,0 +1,14 @@
+Add a text input to add new items to the list. - listata sho mi e za travel list model
+Add a category select input to select the category of the new item. - i only have one category so add to for that
+When both inputs have values, a new item should be added to the corresponding category in the state.
+
+Sort Items:
+Add a sort select input to sort items by title, quantity, isPacked, etc.
+Reset Items:
+Add a reset button to reset the items, including their isPacked status and quantity.
+
+Items Page:
+Text input for adding new items.
+Category select input.
+Sort select input.
+Reset button.
