@@ -1,0 +1,12 @@
+.trip-container {
+    border: 5px solid rgb(4, 122, 13);
+    padding: auto;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+.info-text {
+    color: rgb(214, 7, 111);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}

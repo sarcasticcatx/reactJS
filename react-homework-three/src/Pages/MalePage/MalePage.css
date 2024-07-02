@@ -62,9 +62,10 @@ ol {
     margin: 5px;
     padding: 3px;
 }
-.packed::after {
+.packed::hover {
     background-color: rgb(36, 37, 37);
 }
 .not-packed {
 background-color: rgb(1, 104, 1);
 }
+

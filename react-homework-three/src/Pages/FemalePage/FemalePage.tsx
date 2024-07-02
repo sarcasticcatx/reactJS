@@ -1,12 +1,18 @@
 import { useContext } from "react";
 import "./FemalePage.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GirlItemsContext } from "../../Context/GirlsItemsContext";
 
 
 
 export function ItemsForGirls() {
-  const {list, plusButton, minusButton, isPackedOrNot} = useContext(GirlItemsContext)
+  const {list, plusButton, minusButton, isPackedOrNot, sortItems, resetItem} = useContext(GirlItemsContext)
+
+  const navigate = useNavigate();
+
+  const goToDestinationPage = () => {
+    navigate("/destination");
+  };
 
   return (
     <main>
@@ -49,6 +55,19 @@ export function ItemsForGirls() {
             ))}
           </ol>
         </h2>
+      </div>
+      <div>
+        <Link  style={{ textDecoration: "none" , color: "darkgreen" , fontStyle: "oblique" }}  to={"/add-new-items-for-girls"}>Add New Items</Link>
+        <button className="sortBy" onClick={() => sortItems("title")}>Sort By Title</button>
+        <button className="sortBy" onClick={() => sortItems("quantity")}>Sort By Quantity</button>
+        <button className="sortBy" onClick={() => sortItems("isPacked")}>Sort By Whether Is Packed</button>
+        <button className="sortBy" onClick={() => sortItems("isNotPacked")}>
+          Sort By Whether Is Not Packed
+        </button>
+        <button className="reset" onClick={() => resetItem()}>Reset</button>
+        <button className="sortBy" onClick={goToDestinationPage}>
+          Choose a destination
+        </button>
       </div>
       <div className="footer">
         <p style={{ backgroundColor: "rgb(188, 52, 230)" }}>

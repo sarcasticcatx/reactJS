@@ -1,5 +1,5 @@
 export interface TravelListModel {
-    id: number;
+    id: string;
     title: string;
     quantity: number;
     isPacked: boolean;

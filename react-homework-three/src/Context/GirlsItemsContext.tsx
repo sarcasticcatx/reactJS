@@ -1,13 +1,19 @@
 import { ReactNode, createContext, useState } from "react";
 import { TravelListModel } from "../model/travel-list.model";
+import { v4 as uuidv4 } from "uuid";
 
 //for me - ovie se globalni and can be accessed to anywhere i want them to be
 //typescript was bein a douche so i made two global contexts/states
+//update - well u can only make it from one context poso se zaebav tuka
   interface GirlListContextInterface {
     list: TravelListModel[];
     plusButton: ( selectedItem: TravelListModel) => void;
     minusButton: (selectedItem: TravelListModel) => void;
     isPackedOrNot: (selectedItem: TravelListModel) => void;
+    addItem: (selectedItem: TravelListModel) => void;
+    sortItems: (selectedItem: string) => void;
+    resetItem: () => void
+    
   }
   
   export const GirlItemsContext = createContext<GirlListContextInterface>({
@@ -15,54 +21,57 @@ import { TravelListModel } from "../model/travel-list.model";
     plusButton() {},
     minusButton() {},
     isPackedOrNot() {},
+    addItem: (selectedItem: TravelListModel) => {},
+    sortItems: (selectedItem: string) => {},
+    resetItem: () => {}
   });
   
   const girls = {
     girlList: [
         {
-          id: 1,
+          id: uuidv4(),
           title: "Toothbrush & toothpaste",
           quantity: 0,
           isPacked: false,
         },
         {
-          id: 2,
+          id: uuidv4(),
           title: "Skin care",
           quantity: 0,
           isPacked: false,
         },
         {
-          id: 3,
+          id: uuidv4(),
           title: "Shampoo",
           quantity: 0,
           isPacked: false,
         },
         {
-          id: 4,
+          id: uuidv4(),
           title: "Deodorant",
           quantity: 0,
           isPacked: false,
         },
         {
-          id: 5,
+          id: uuidv4(),
           title: "Dresses",
           quantity: 0,
           isPacked: false,
         },
         {
-          id: 6,
+          id: uuidv4(),
           title: "Makeup",
           quantity: 0,
           isPacked: false,
         },
         {
-          id: 7,
+          id: uuidv4(),
           title: "Swimsuit",
           quantity: 0,
           isPacked: false,
         },
         {
-          id: 8,
+          id: uuidv4(),
           title: "Jewelry",
           quantity: 0,
           isPacked: false,
@@ -109,10 +118,41 @@ import { TravelListModel } from "../model/travel-list.model";
         return updatedList;
       });
     };
+    
+  const addItem = (selectedItem: TravelListModel) => {
+    setTwoLists((prevItems) => [...prevItems, selectedItem]);
+  };
+
+  const sortItems = (selectedItem: string) => {
+    if (selectedItem === "title") {
+      setTwoLists((prevItem) => {
+        return prevItem.sort((a, b) => (a.title > b.title ? 1 : -1));
+      });
+    }
+    if (selectedItem === "quantity") {
+      setTwoLists((prevItem) => {
+        return prevItem.sort((a, b) => (a.quantity > b.quantity ? 1 : -1));
+      });
+    }
+    if (selectedItem === "isPacked") {
+      setTwoLists((prevItem) => {
+        return prevItem.filter((item) => item.isPacked);
+      });
+    }
+    if (selectedItem === "isNotPacked") {
+      setTwoLists((prevItem) => {
+        return prevItem.filter((item) => !item.isPacked);
+      });
+    }
+  }
+
+  const resetItem = () => {
+    setTwoLists((prevItem) => prevItem.map(item => ({...item, isPacked: false, quantity: 0})))
+  }
   
     return (
       <GirlItemsContext.Provider
-        value={{ list, plusButton, minusButton, isPackedOrNot }}
+        value={{ list, plusButton, minusButton, isPackedOrNot, addItem, resetItem, sortItems }}
       >
         {children}
       </GirlItemsContext.Provider>

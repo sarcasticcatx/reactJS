@@ -1,14 +1,22 @@
 import { useContext } from "react";
 import "./MalePage.css";
 import { ItemsContext } from "../../Context/ItemsContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
+// kopchinjata za sortiranje rabotat otkako kje kliknes na edna od pluschinjata
+// i se namestuvaat poradi nekoja prichina inache vaka ne reagira
 
 export function ItemsForGuys() {
+  const { list, plusButton, minusButton, isPackedOrNot, sortItems, resetItem} =
+    useContext(ItemsContext);
 
-const {list, plusButton, minusButton, isPackedOrNot} = useContext(ItemsContext)
+  const navigate = useNavigate();
 
- return (
+  const goToDestinationPage = () => {
+    navigate("/destination");
+  };
+
+  return (
     <main>
       <div className="header">
         <small style={{ color: "green" }}> @PackMate™</small>
@@ -51,8 +59,35 @@ const {list, plusButton, minusButton, isPackedOrNot} = useContext(ItemsContext)
         </h2>
       </div>
       <div>
-        <Link to={"/add-new-items"}>
-        Add New Items</Link>
+        <Link
+          style={{
+            textDecoration: "none",
+            color: "darkgreen",
+            fontStyle: "oblique",
+          }}
+          to={"/add-new-items-for-guys"}
+        >
+          Add New Items
+        </Link>
+        <button className="sortBy" onClick={() => sortItems("title")}>
+          Sort By Title
+        </button>
+        <button className="sortBy" onClick={() => sortItems("quantity")}>
+          Sort By Quantity
+        </button>
+        <button className="sortBy" onClick={() => sortItems("isPacked")}>
+          Sort By Whether Is Packed
+        </button>
+        <button className="sortBy" onClick={() => sortItems("isNotPacked")}>
+          Sort By Whether Is Not Packed
+        </button>
+        <button className="reset" onClick={() => resetItem()}>
+          Reset
+        </button>
+        <button className="sortBy" onClick={goToDestinationPage}>
+          Choose a destination
+        </button>
+        <div></div>
       </div>
       <div className="footer">
         <p style={{ backgroundColor: "rgb(188, 52, 230)" }}>
@@ -76,7 +111,3 @@ const {list, plusButton, minusButton, isPackedOrNot} = useContext(ItemsContext)
     </main>
   );
 }
-
-
-
- 

@@ -1,0 +1,44 @@
+.CountryCard {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 350px;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgb(131, 211, 144);
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  
+  
+  .CountryCard img {
+    object-fit: contain;
+    width: 50%;
+    max-height: 150px;
+  }
+  
+  .CountryCard .card-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid palevioletred;
+  
+    width: 100%;
+    padding: 10px 0;
+    flex-shrink: 0;
+  }
+  
+  .CountryCard .card-details p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: darkgreen;
+    min-width: 100px;
+    padding: 10px;
+    min-height: 50px;
+    border-radius: 4px;
+  }
+  

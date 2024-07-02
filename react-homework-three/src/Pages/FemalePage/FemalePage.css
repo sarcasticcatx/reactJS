@@ -65,13 +65,19 @@
 }
 
 .packed  {
-    background-color: rgb(113, 148, 160);
+    background-color: rgb(91, 139, 155);
     margin: 5px;
     padding: 3px;
 }
-.packed::after {
+.packed::hover {
     background-color: rgb(36, 37, 37);
 }
 .not-packed {
 background-color: rgb(1, 104, 1);
+}
+.sortBy , .reset {
+    background-color: rgb(131, 212, 10);
+    color: rgb(62, 25, 97);
+    margin: 5px;
+    padding: 3px;
 }

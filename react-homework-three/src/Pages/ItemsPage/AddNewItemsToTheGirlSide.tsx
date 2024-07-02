@@ -1,18 +1,20 @@
 import { useContext } from "react";
-import { ItemsContext } from "../../Context/ItemsContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { TravelListModel } from "../../model/travel-list.model";
 import "./AddNewItems.css";
 import { v4 as uuidv4 } from 'uuid'; 
+import { GirlItemsContext } from "../../Context/GirlsItemsContext";
 
 interface FormValues {
   title: string;
   quantity: number;
 }
 
-export function AddItemPage() {
-  const { addItem } = useContext(ItemsContext);
+
+//take this for the form trip details cuz u already have a shema ili dodaj samo nekoj bits and pices
+export function AddItemPageForGirls() {
+  const { addItem } = useContext(GirlItemsContext);
 
   const navigate = useNavigate();
 
@@ -46,7 +48,7 @@ export function AddItemPage() {
 
       addItem(newestItemToTheFamily);
 
-      navigate("/items-for-boys");
+      navigate("/items-for-girls");
       reset();
     } catch (error) {
       console.log("Can't add the item");
