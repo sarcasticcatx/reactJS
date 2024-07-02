@@ -2,9 +2,6 @@ import { ReactNode, createContext, useState } from "react";
 import { TravelListModel } from "../model/travel-list.model";
 import { v4 as uuidv4 } from "uuid";
 
-//for me - ovie se globalni and can be accessed to anywhere i want them to be
-//typescript was bein a douche so i made two global contexts/states
-//update - well u can only make it from one context poso se zaebav tuka
   interface GirlListContextInterface {
     list: TravelListModel[];
     plusButton: ( selectedItem: TravelListModel) => void;
